@@ -6,26 +6,25 @@
     <title>Jaringan</title>
 </head>
 <body>
-    <h2>1. Apa itu jaringan :</h2>
-    <p>Jaringan adalah sekumpulan perangkat (komputer, router, printer) yang saling terhubung dan bisa saling bertukar Data.</p>
+    1. Apa itu jaringan :
+    Jaringan adalah sekumpulan perangkat (komputer, router, printer) yang saling terhubung dan bisa saling bertukar Data.
 
-    <h2>Jenis-jenis Jaringan :</h2>
-    <p>- LAN (Local area Network)</p>
-    <p>- WAN (Wide Area Network) -> Jaringan Internet Global.</p>
+    Jenis-jenis Jaringan :
+    - LAN (Local area Network)
+    - WAN (Wide Area Network) -> Jaringan Internet Global.
 
 
-    =====================================================================================
-    =====================================================================================
-    <h2>2. Komponen Penting Jaringan :</h2>
-    <p>| Komponen        | Fungsi   </p>                                                      |
-<p>| --------------- | -------------------------------------------------------------- | </p>
-<p>| **IP Address**  | Alamat unik setiap perangkat                                   | </p>
-<p>| **MAC Address** | Alamat fisik perangkat (NIC)                                   | </p>
-<p>| **Router**      | Penghubung antara jaringan (LAN ↔ Internet)                    | </p>
-<p>| **DNS**         | Menerjemahkan nama domain → IP                                 | </p>
-<p>| **Gateway**     | Jalur keluar dari jaringan lokal                               | </p>
-<p>| **Subnet Mask** | Menentukan bagian network dan host dalam IP                    | </p>
-<p>| **Ports**       | Pintu komunikasi untuk layanan (HTTP: 80, HTTPS: 443, SSH: 22) | </p>
+=====================================================================================
+=====================================================================================   
+                         KOMPONEN PENTING JARINGAN
+| --------------- | -------------------------------------------------------------- |
+| **IP Address**  | Alamat unik setiap perangkat                                   |
+| **MAC Address** | Alamat fisik perangkat (NIC)                                   |
+| **Router**      | Penghubung antara jaringan (LAN ↔ Internet)                    |
+| **DNS**         | Menerjemahkan nama domain → IP                                 |
+| **Gateway**     | Jalur keluar dari jaringan lokal                               |
+| **Subnet Mask** | Menentukan bagian network dan host dalam IP                    |
+| **Ports**       | Pintu komunikasi untuk layanan (HTTP: 80, HTTPS: 443, SSH: 22) |
 
 ============================================================
 ============================================================
@@ -36,7 +35,7 @@
     1. Cek IP Adress :
 
     ┌─[user@parrot]─[~]
-└──╼ $ip a
+    └──╼ $ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -55,7 +54,7 @@
     2. Ping Website :
 
     ┌─[user@parrot]─[~]
-└──╼ $ping google.com
+    └──╼ $ping google.com
 ping: socktype: SOCK_RAW
 ping: socket: Operation not permitted
 ping: => missing cap_net_raw+p capability or setuid?
@@ -63,7 +62,7 @@ ping: => missing cap_net_raw+p capability or setuid?
     3. Cari IP Website (lihat DNS bekerja)
 
     ┌─[✗]─[user@parrot]─[~]
-└──╼ $dig google.com
+    └──╼ $dig google.com
 
 ; <<>> DiG 9.18.33-1~deb12u2-Debian <<>> google.com
 ;; global options: +cmd
@@ -98,7 +97,7 @@ ns2.google.com.		341111	IN	A	216.239.34.10
     4. Cek Port Terbuka ke Server :
 
     ┌─[user@parrot]─[~]
-└──╼ $nc -zv google.com 80
+    └──╼ $nc -zv google.com 80
 Connection to google.com (216.239.38.120) 80 port [tcp/http] succeede
 
 
