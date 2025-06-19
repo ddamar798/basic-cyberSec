@@ -28,3 +28,19 @@ Model TCP/IP lebih sederhana dan dipakai di dunia nyata saat ini. Hanya terdiri 
 | 1–2       | Network Access | Ethernet, MAC  |
 
 📌 Jadi: OSI = teori | TCP/IP = praktik
+
+=========================================================================================
+=========================================================================================
+🔄 3. Bagaimana Data Bergerak di Jaringan?
+
+Misalnya kamu buka YouTube:
+
+1. Kamu klik link video (Application)
+2. Data dikodekan (Presentation)
+3. Dibuat sesi (Session)
+4. Dipecah jadi paket (Transport)
+5. Dikasih alamat tujuan (Network)
+6. Disiapkan untuk dikirim lewat kabel (Data Link)
+7. Dikirim via Wi-Fi/kabel (Physical)
+
+🔍 Di sisi penerima, proses ini dibalik.
