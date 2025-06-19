@@ -79,27 +79,47 @@ $ nc -zvu google.com 53
 
 📝 Tugas Hari ke-4:
 
-1. Jalankan:
-   - sudo netstat -tunlp
-   - sudo ss -tunlp
-   - nc -zv google.com 80
-   - nc -zv google.com 443
-   - nc -zvu google.com 53
-
-2. Simpan output ke file:
-   - Contoh:
-     $ sudo netstat -tunlp > hari4-netstat.txt
-
-3. Analisa dan tulis jawaban:
+Analisa dan tulis jawaban:
    - Port apa saja yang terbuka di lokal?
+   Jawab : 
+    0 0.0.0.0:8080 
+
    - Aplikasi apa yang aktif?
+   Jawab :
+    2587/python3 
    - Port apa saja yang terbuka di google.com?
+    Jawab :
+     80/443 port [tcp/http]
+
    - Mana yang TCP, mana yang UDP?
+    Jawab :
+     -> bash : nc -zv google.com 80
+        - Meminta uji koneksi ke port 80 
+        - Karena tidak ada flag -u, mana nc menggunakan TCP secara default.
+        - Port 80 = standar untuk HTTP, yang memang menggunakan TCP.
+        - output : Connection to google.com (216.239.38.120) 80 port [tcp/http] succeeded!
+        - Artinya : - Port 80 = aktif
+                    - Protokol: TCP (karena kita tidak pakai -u)
+                    - Layanan: HTTP
 
-———————————————
+    -> bash : nc -zvu google.com 53
+        - Di sini, kita menambahkan -u → artinya menggunakan UDP
+        - Port 53 = biasanya dipakai oleh layanan DNS, yang berbasis UDP
+        - output : Connection to google.com 53 port [udp/domain] succeeded!
+        - Arti yang dapat saya simpulkan : - Port 53 = aktif
+                                           - Protokol: UDP karena menggunakan -zvu
+                                           - Layanan Domain
 
-📦 Tambahan Referensi (Opsional):
-- https://www.cloudflare.com/learning/ddos/glossary/open-ports/
-- https://portswigger.net/web-security
+📦 Catatan Pentingggggg :
 
-===== END OF DAY 4 =====
+| Port | Layanan | Protokol         |
+| ---- | ------- | ---------------- |
+| 80   | HTTP    | TCP              |
+| 443  | HTTPS   | TCP              |
+| 53   | DNS     | UDP (kadang TCP) |
+| 22   | SSH     | TCP              |
+| 123  | NTP     | UDP              |
+| 25   | SMTP    | TCP              |
+| 161  | SNMP    | UDP              |
+
+Jadi: kamu perlu tahu layanan apa yang berjalan di port tersebut untuk tahu apakah dia pakai TCP atau UDP.
