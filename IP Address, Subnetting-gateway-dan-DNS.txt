@@ -1,0 +1,3 @@
+IP Address, Subnetting, Gateway, dan DNS — Senjata Pentester
+==============================================================
+

@@ -68,3 +68,10 @@ Misalnya kamu buka YouTube:
        valid_lft 86139sec preferred_lft 14139sec
     inet6 fe80::7071:f9e5:5afa:5a73/64 scope link noprefixroute 
        valid_lft forever preferred_lft forever
+
+2. Lihat route jaringan (Layer 3)
+┌─[user@parrot]─[~]
+└──╼ $ip route
+default via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100 
+
+   -> Artinya semua koneksi keluar akan lewat 10.0.2.2
