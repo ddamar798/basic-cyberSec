@@ -13,3 +13,18 @@ Adalah model konseptual yang membagi proses komunikasi jaringan menjadi 7 lapisa
 | 3️⃣ | Network      | Rute antar jaringan                    | IP, Router           |
 | 2️⃣ | Data Link    | Komunikasi antar perangkat di jaringan | MAC Address          |
 | 1️⃣ | Physical     | Kabel, sinyal                          | Ethernet, Wi-Fi      |
+
+=========================================================================================
+=========================================================================================
+
+🔷 2. Model TCP/IP
+-----------------------------------------------
+Model TCP/IP lebih sederhana dan dipakai di dunia nyata saat ini. Hanya terdiri dari 4 layer:
+| OSI Layer | TCP/IP Layer   | Contoh         |
+| --------- | -------------- | -------------- |
+| 5–7       | Application    | HTTP, DNS, FTP |
+| 4         | Transport      | TCP, UDP       |
+| 3         | Internet       | IP             |
+| 1–2       | Network Access | Ethernet, MAC  |
+
+📌 Jadi: OSI = teori | TCP/IP = praktik
