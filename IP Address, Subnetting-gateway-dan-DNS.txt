@@ -1,3 +1,138 @@
 IP Address, Subnetting, Gateway, dan DNS — Senjata Pentester
 ==============================================================
 
+## 🔹 1. Apa Itu IP Address?
+
+**IP Address** = alamat unik tiap perangkat dalam jaringan.
+Dibagi dua jenis:
+
+* **IPv4**: Contoh → 192.168.1.1
+* **IPv6**: Contoh → 2001:0db8:85a3::8a2e:0370:7334
+
+IPv4 terdiri dari 4 blok angka (oktet) dipisahkan titik:
+
+```text
+192.168.1.1 → 8-bit × 4 = 32-bit
+```
+
+---
+
+## 🔹 2. Jenis IP Address
+
+| Jenis         | Contoh                                 | Keterangan                |
+| ------------- | -------------------------------------- | ------------------------- |
+| **Private**   | 192.168.x.x / 10.x.x.x / 172.16–31.x.x | Dipakai di jaringan lokal |
+| **Public**    | 8.8.8.8, 103.23.100.12                 | Digunakan di internet     |
+| **Loopback**  | 127.0.0.1                              | Alamat ke diri sendiri    |
+| **Broadcast** | 255.255.255.255                        | Kirim ke semua host       |
+
+---
+
+## 🔹 3. Subnetting (Singkat & Jelas)
+
+Subnet = cara membagi jaringan besar menjadi kecil.
+Contoh: `192.168.1.0/24` artinya:
+
+* `192.168.1` = Network
+* `/24` = 24 bit untuk network, 8 bit untuk host
+* Bisa punya 254 host (karena 256 – 2: network & broadcast)
+
+fungsi Subnetting untuk jaringan:
+
+* Lebih aman
+* Lebih efisien
+* Penting buat scanning target saat pentest
+
+---
+
+## 🔹 4. Apa Itu Gateway?
+
+Gateway = gerbang keluar dari jaringan lokal ke luar (internet).
+Contoh: Router rumah kamu = gateway.
+
+Cara lihat gateway:
+
+```bash
+ip route
+```
+
+Contoh output:
+
+```text
+default via 192.168.1.1 dev eth0
+```
+
+> Artinya: Semua koneksi ke luar akan lewat `192.168.1.1`
+
+---
+
+## 🔹 5. Apa Itu DNS?
+
+DNS = Domain Name System
+Mengubah nama domain (google.com) jadi IP address.
+
+Coba cek DNS-mu:
+
+```bash
+cat /etc/resolv.conf
+```
+
+Coba resolusi domain manual:
+
+```bash
+dig google.com
+```
+
+Coba lookup:
+
+```bash
+nslookup google.com
+```
+
+Coba DNS brute-force (install dulu):
+
+```bash
+sudo apt install dnsenum
+dnsenum google.com
+```
+
+---
+
+## 🛠️ Praktik di Terminal
+
+```bash
+ip a               # Lihat IP address lokal
+ip route           # Lihat gateway
+cat /etc/resolv.conf   # Lihat DNS
+dig google.com     # Lihat IP google
+```
+
+---
+
+## 🧠 Studi Kasus:
+
+Misalnya kamu berada di jaringan sekolah:
+
+* IP kamu: `192.168.10.24`
+* Gateway: `192.168.10.1`
+* Subnet: `/24` → maka ada 254 kemungkinan host
+* DNS: `8.8.8.8` → DNS Google
+
+Jika kamu jadi pentester:
+
+* Kamu akan scan seluruh `192.168.10.0/24` pakai Nmap
+* Targetkan host selain gateway dan dirimu
+
+---
+
+## 📝 Tugas Hari ke-3:
+
+1. Tulis dan jelaskan IP kamu, subnet, gateway, dan DNS.
+2. Praktikkan `dig`, `nslookup`, `ip route`, dan catat hasilnya.
+3. (Opsional) Pelajari: perbedaan antara `TCP` dan `UDP`.
+
+---
+
+Kalau kamu udah beres, kita bisa lanjut ke **Hari ke-4: Memahami Protokol TCP, UDP, dan Port — Dasar Teknik Hacking!** 🚪🔓
+
+Mau lanjut sekarang juga? 😁
