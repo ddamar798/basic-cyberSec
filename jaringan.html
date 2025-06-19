@@ -33,7 +33,7 @@
 --------------------------------------------------------------
 1> Tulis hasil dari perintah terminal!
 
-    1. ip a
+    1. Cek IP Adress :
 
     ┌─[user@parrot]─[~]
 └──╼ $ip a
@@ -52,9 +52,54 @@
     inet6 fe80::7071:f9e5:5afa:5a73/64 scope link noprefixroute 
        valid_lft forever preferred_lft forever
 
+    2. Ping Website :
 
+    ┌─[user@parrot]─[~]
+└──╼ $ping google.com
+ping: socktype: SOCK_RAW
+ping: socket: Operation not permitted
+ping: => missing cap_net_raw+p capability or setuid?
 
+    3. Cari IP Website (lihat DNS bekerja)
 
+    ┌─[✗]─[user@parrot]─[~]
+└──╼ $dig google.com
+
+; <<>> DiG 9.18.33-1~deb12u2-Debian <<>> google.com
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 57325
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 4, ADDITIONAL: 4
+
+;; QUESTION SECTION:
+;google.com.			IN	A
+
+;; ANSWER SECTION:
+google.com.		300	IN	CNAME	forcesafesearch.google.com.
+forcesafesearch.google.com. 83631 IN	A	216.239.38.120
+
+;; AUTHORITY SECTION:
+google.com.		341249	IN	NS	ns1.google.com.
+google.com.		341249	IN	NS	ns3.google.com.
+google.com.		341249	IN	NS	ns4.google.com.
+google.com.		341249	IN	NS	ns2.google.com.
+
+;; ADDITIONAL SECTION:
+ns1.google.com.		341111	IN	A	216.239.32.10
+ns3.google.com.		339214	IN	A	216.239.36.10
+ns4.google.com.		339214	IN	A	216.239.38.10
+ns2.google.com.		341111	IN	A	216.239.34.10
+
+;; Query time: 46 msec
+;; SERVER: 10.0.2.3#53(10.0.2.3) (UDP)
+;; WHEN: Thu Jun 19 02:48:37 UTC 2025
+;; MSG SIZE  rcvd: 210
+
+    4. Cek Port Terbuka ke Server :
+
+    ┌─[user@parrot]─[~]
+└──╼ $nc -zv google.com 80
+Connection to google.com (216.239.38.120) 80 port [tcp/http] succeede
 
 
 
