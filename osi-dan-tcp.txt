@@ -1,0 +1,15 @@
+Memahami Model OSI & TCP/IP – Tulang Punggung Dunia Jaringan
+
+🔷 1. Apa Itu Model OSI?
+OSI = Open Systems Interconnection
+Adalah model konseptual yang membagi proses komunikasi jaringan menjadi 7 lapisan (layer).
+
+| No  | Layer        | Fungsi                                 | Contoh               |
+| --- | ------------ | -------------------------------------- | -------------------- |
+| 7️⃣ | Application  | Interaksi dengan user                  | Browser, FTP, Telnet |
+| 6️⃣ | Presentation | Format data (enkripsi, encoding)       | SSL, TLS             |
+| 5️⃣ | Session      | Mulai dan kelola sesi                  | Session token        |
+| 4️⃣ | Transport    | Kirim data dengan betul (TCP/UDP)      | TCP, UDP             |
+| 3️⃣ | Network      | Rute antar jaringan                    | IP, Router           |
+| 2️⃣ | Data Link    | Komunikasi antar perangkat di jaringan | MAC Address          |
+| 1️⃣ | Physical     | Kabel, sinyal                          | Ethernet, Wi-Fi      |
