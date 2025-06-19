@@ -1,0 +1,105 @@
+===== HARI KE-4 =====
+=== TCP, UDP, dan Port — Dasar Teknik Hacking ===
+
+🎯 Tujuan:
+Memahami bagaimana protokol komunikasi bekerja (TCP vs UDP),
+dan mengenali fungsi port dalam dunia jaringan dan serangan.
+
+———————————————
+
+📘 1. Apa itu Protokol TCP dan UDP?
+
+📦 TCP (Transmission Control Protocol)
+- Protokol yang menjamin data terkirim UTUH dan BERURUTAN.
+- Cocok untuk: browsing, email, login (HTTP, HTTPS, FTP, SSH).
+- Ada proses 3-way handshake (SYN → SYN-ACK → ACK).
+
+📦 UDP (User Datagram Protocol)
+- Protokol yang cepat tapi tidak menjamin keutuhan data.
+- Cocok untuk: streaming, game online, DNS.
+- Tidak ada handshake → lebih cepat, tapi tidak andal.
+
+———————————————
+
+📘 2. Apa itu Port?
+
+Port = pintu virtual untuk setiap layanan di komputer.
+Contoh:
+- HTTP: port 80
+- HTTPS: port 443
+- SSH: port 22
+- FTP: port 21
+- DNS: port 53
+
+Port punya 2 jenis:
+- TCP Port (pakai TCP protocol)
+- UDP Port (pakai UDP protocol)
+
+———————————————
+
+🛠️ 3. Praktik di Terminal
+
+🔍 Cek semua port terbuka dan layanan aktif:
+$ sudo netstat -tunlp
+
+Penjelasan output:
+- Proto: TCP atau UDP
+- Local Address: IP + port yang digunakan
+- State: status koneksi (LISTEN, ESTABLISHED)
+- PID/Program name: aplikasi yang menggunakan port tsb
+
+Contoh:
+tcp   0   0 127.0.0.1:3306   0.0.0.0:*   LISTEN   1234/mysqld
+→ Artinya: Port 3306 digunakan oleh MySQL dan sedang listen di localhost
+
+🔍 Lihat port terbuka secara real-time (pakai ss):
+$ sudo ss -tunlp
+
+🔍 Tes port spesifik dengan netcat:
+$ nc -zv google.com 80
+$ nc -zv google.com 443
+
+Penjelasan output:
+- "succeeded" → port terbuka
+- "refused" → port tertutup
+- "timed out" → tidak bisa dijangkau (mungkin firewall)
+
+🔍 Tes port UDP (lebih tricky):
+$ nc -zvu google.com 53
+
+———————————————
+
+🔐 4. Kenapa Pentester Wajib Kuasai Ini?
+
+- Saat scanning target, kamu harus tahu port mana yang aktif.
+- Mengetahui layanan di balik port bisa menentukan jenis eksploitasi.
+- Beberapa port default rawan jika tidak diamankan (misal: FTP port 21).
+
+———————————————
+
+📝 Tugas Hari ke-4:
+
+1. Jalankan:
+   - sudo netstat -tunlp
+   - sudo ss -tunlp
+   - nc -zv google.com 80
+   - nc -zv google.com 443
+   - nc -zvu google.com 53
+
+2. Simpan output ke file:
+   - Contoh:
+     $ sudo netstat -tunlp > hari4-netstat.txt
+
+3. Analisa dan tulis jawaban:
+   - Port apa saja yang terbuka di lokal?
+   - Aplikasi apa yang aktif?
+   - Port apa saja yang terbuka di google.com?
+   - Mana yang TCP, mana yang UDP?
+
+———————————————
+
+📦 Tambahan Referensi (Opsional):
+- https://www.cloudflare.com/learning/ddos/glossary/open-ports/
+- https://portswigger.net/web-security
+
+===== END OF DAY 4 =====
