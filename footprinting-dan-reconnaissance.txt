@@ -1,11 +1,4 @@
-===== HARI KE-5 =====
 === DNS Recon, Whois Lookup, dan Footprinting ===
-
-🎯 Tujuan:
-Belajar bagaimana mengumpulkan informasi tentang target (domain, server, jaringan)
-sebelum melakukan scanning atau eksploitasi.
-
-———————————————
 
 📘 1. Apa itu Footprinting?
 
@@ -108,7 +101,7 @@ $ nslookup tokopedia.com
 
 ———————————————
 
-📝 Tugas Hari ke-5:
+📝 Tugas
 
 1. Pilih 1 domain (bebas, misal: tokopedia.com / kominfo.go.id / kampusmu)
 2. Lakukan footprinting:
