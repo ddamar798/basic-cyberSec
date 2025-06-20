@@ -1,0 +1,136 @@
+===== HARI KE-5 =====
+=== DNS Recon, Whois Lookup, dan Footprinting ===
+
+🎯 Tujuan:
+Belajar bagaimana mengumpulkan informasi tentang target (domain, server, jaringan)
+sebelum melakukan scanning atau eksploitasi.
+
+———————————————
+
+📘 1. Apa itu Footprinting?
+
+Footprinting = Langkah awal dalam ethical hacking/pentesting untuk
+mengumpulkan informasi sebanyak mungkin tentang target.
+
+Tujuannya:
+- Menentukan titik lemah
+- Mengenal sistem target (domain, IP, DNS, subdomain, dll)
+- Mempersiapkan serangan secara terarah
+
+Footprinting terbagi 2:
+1. **Passive** → tanpa berinteraksi langsung (Whois, Google, Shodan)
+2. **Active** → ada koneksi langsung ke target (DNS query, ping, traceroute)
+
+———————————————
+
+📘 2. Whois Lookup
+
+Whois = layanan untuk melihat informasi pemilik domain
+
+$ whois domain.com
+
+Contoh:
+$ whois google.com
+
+Output penting:
+- Registrar (penyedia domain)
+- Creation & expiry date
+- Name Server (DNS hosting)
+- Contact info (kadang disembunyikan)
+
+→ Digunakan untuk: 
+- Melihat identitas perusahaan/individu
+- Cek apakah domain masih aktif
+- Deteksi potensi subdomain DNS
+
+Kalau belum ada `whois`, install dulu:
+$ sudo apt update && sudo apt install whois
+
+———————————————
+
+📘 3. DNS Enumeration / DNS Recon
+
+DNS = Domain Name System, bagian penting untuk mengenali target
+
+Tools: `dig`, `host`, `nslookup`, `dnsenum`
+
+Contoh 1 – Cek NS record:
+$ dig google.com NS
+
+Contoh 2 – Cek A record:
+$ dig google.com A
+
+Contoh 3 – Reverse Lookup:
+$ dig -x 8.8.8.8
+
+Contoh 4 – Bruteforce Subdomain (pakai dnsenum):
+$ sudo apt install dnsenum
+$ dnsenum google.com
+
+Hasil penting:
+- Subdomain aktif (mail.google.com, accounts.google.com)
+- MX record (mail server)
+- TXT record (biasanya SPF, verifikasi)
+
+———————————————
+
+📘 4. Cek IP dan Lokasi Server
+
+Gunakan `ping` untuk dapat IP publik:
+$ ping -c 1 google.com
+
+Gunakan `geoiplookup` (jika tersedia):
+$ sudo apt install geoip-bin
+$ geoiplookup 8.8.8.8
+
+———————————————
+
+🛠️ Praktik dan Penjelasan Output
+
+1. WHOIS:
+$ whois tokopedia.com
+→ Cek nama registrant, NS, dan DNS provider
+
+2. DIG NS Record:
+$ dig tokopedia.com NS
+→ Menampilkan server DNS yang digunakan
+
+3. DNSENUM:
+$ dnsenum tokopedia.com
+→ Menampilkan daftar subdomain yang ditemukan
+
+4. REVERSE IP:
+$ dig -x [IP_Address]
+→ Mendapatkan domain dari IP tertentu (jika ada)
+
+5. NSLOOKUP:
+$ nslookup tokopedia.com
+
+———————————————
+
+📝 Tugas Hari ke-5:
+
+1. Pilih 1 domain (bebas, misal: tokopedia.com / kominfo.go.id / kampusmu)
+2. Lakukan footprinting:
+   - whois
+   - dig A/NS/MX
+   - dnsenum
+   - nslookup
+3. Simpan output dan buat catatan hasil analisa:
+   - Siapa penyedia DNS-nya?
+   - Ada subdomain apa saja?
+   - Siapa pemilik domainnya?
+   - IP server utamanya berapa?
+
+Contoh perintah:
+$ whois kominfo.go.id > hasil-whois.txt
+$ dnsenum kominfo.go.id > hasil-dnsenum.txt
+
+———————————————
+
+📌 Referensi Tambahan (Opsional):
+- https://tools.keycdn.com/whois
+- https://securitytrails.com
+- https://dnsdumpster.com
+
+===== END OF DAY 5 =====
