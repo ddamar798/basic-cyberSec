@@ -133,6 +133,8 @@ ncbs.tokopedia.com.                      60       IN    A        47.74.234.244
 ncirc.tokopedia.com.
 
    - Siapa pemilik domainnya?
+     -> PT TOKOPEDIA
+ 
    - IP server utamanya berapa?
 
 Contoh perintah:
