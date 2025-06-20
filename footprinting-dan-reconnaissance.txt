@@ -119,7 +119,19 @@ $ nslookup tokopedia.com
            Name Server: NS-869.AWSDNS-44.NET
 
    - Ada subdomain apa saja?
-     ->
+     -> Ada sangat bantak subdomain di tokpedia.com, saya kaan tulis Beberapa :
+namsa.tokopedia.com.                     60       IN    A        47.74.234.244
+nationalregister.tokopedia.com.          60       IN    A        47.74.234.244
+nav.tokopedia.com.                       60       IN    A        47.74.234.244
+navtest.tokopedia.com.                   60       IN    A        47.74.234.244
+nc.tokopedia.com.                        60       IN    A        47.74.234.244
+nc1s.tokopedia.com.                      60       IN    A        47.74.234.244
+nc3a.tokopedia.com.                      60       IN    A        47.74.234.244
+ncags.tokopedia.com.                     60       IN    A        47.74.234.244
+ncas.tokopedia.com.                      60       IN    A        47.74.234.244
+ncbs.tokopedia.com.                      60       IN    A        47.74.234.244
+ncirc.tokopedia.com.
+
    - Siapa pemilik domainnya?
    - IP server utamanya berapa?
 
