@@ -141,15 +141,3 @@ ncirc.tokopedia.com.
           Ip server utama juga bisa dilihat denggan perintah [ dig namadomain.com A]
 
 
-Contoh perintah:
-$ whois kominfo.go.id > hasil-whois.txt
-$ dnsenum kominfo.go.id > hasil-dnsenum.txt
-
-———————————————
-
-📌 Referensi Tambahan (Opsional):
-- https://tools.keycdn.com/whois
-- https://securitytrails.com
-- https://dnsdumpster.com
-
-===== END OF DAY 5 =====
