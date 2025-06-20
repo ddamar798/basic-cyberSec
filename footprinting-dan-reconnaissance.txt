@@ -136,6 +136,9 @@ ncirc.tokopedia.com.
      -> PT TOKOPEDIA
  
    - IP server utamanya berapa?
+     -> Address: 47.74.244.18 
+          Saya mendapatkan ini dari menjalankan perintah [ nslookup ]
+
 
 Contoh perintah:
 $ whois kominfo.go.id > hasil-whois.txt
