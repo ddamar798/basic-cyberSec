@@ -137,7 +137,8 @@ ncirc.tokopedia.com.
  
    - IP server utamanya berapa?
      -> Address: 47.74.244.18 
-          Saya mendapatkan ini dari menjalankan perintah [ nslookup ]
+          Saya mendapatkan ini dari menjalankan perintah [ nslookup ], 
+          Ip server utama juga bisa dilihat denggan perintah [ dig namadomain.com A]
 
 
 Contoh perintah:
