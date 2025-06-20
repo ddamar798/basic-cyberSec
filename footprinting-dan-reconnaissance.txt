@@ -113,8 +113,13 @@ $ nslookup tokopedia.com
    - nslookup
 3. Buat catatan hasil analisa:
    - Siapa penyedia DNS-nya?
-     -> www.cscprotectsbrands.com
+     ->    Name Server: NS-1184.AWSDNS-20.ORG
+           Name Server: NS-1959.AWSDNS-52.CO.UK
+           Name Server: NS-491.AWSDNS-61.COM
+           Name Server: NS-869.AWSDNS-44.NET
+
    - Ada subdomain apa saja?
+     ->
    - Siapa pemilik domainnya?
    - IP server utamanya berapa?
 
