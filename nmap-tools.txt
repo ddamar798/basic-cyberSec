@@ -1,0 +1,140 @@
+===== HARI KE-6 =====
+=== Nmap — Tool Wajib Pentester: Scanning dan Mapping Jaringan ===
+
+🎯 Tujuan:
+Memahami cara menggunakan Nmap untuk memetakan jaringan, menemukan host aktif, port terbuka, dan layanan yang berjalan di target.
+
+———————————————
+
+📘 1. Apa Itu Nmap?
+
+Nmap (Network Mapper) adalah tool open-source untuk scanning jaringan:
+- Mendeteksi perangkat aktif
+- Menemukan port terbuka
+- Mengetahui OS target
+- Mengetahui layanan yang berjalan
+
+Nmap = **tool utama** untuk reconnaissance aktif sebelum pentest
+
+———————————————
+
+📦 2. Instalasi Nmap
+Parrot OS biasanya sudah punya Nmap. Cek dengan:
+$ nmap -v
+
+Kalau belum ada:
+$ sudo apt update && sudo apt install nmap
+
+———————————————
+
+📘 3. Jenis Scanning Dasar Nmap
+
+🔹 Scan IP tunggal:
+$ nmap 192.168.1.1
+
+🔹 Scan IP + informasi port:
+$ nmap -sS 192.168.1.1
+
+🔹 Scan subnet:
+$ nmap -sn 192.168.1.0/24
+
+🔹 Scan banyak target:
+$ nmap 192.168.1.1 192.168.1.5 192.168.1.10
+
+🔹 Scan dengan OS detection:
+$ sudo nmap -O 192.168.1.1
+
+🔹 Scan dengan versi layanan:
+$ sudo nmap -sV 192.168.1.1
+
+🔹 Scan semua port (default hanya 1000):
+$ sudo nmap -p- 192.168.1.1
+
+———————————————
+
+📊 Penjelasan Singkat Output Nmap:
+Contoh output:
+PORT     STATE  SERVICE
+22/tcp   open   ssh
+80/tcp   open   http
+443/tcp  open   https
+
+Penjelasan:
+- **PORT**: nomor port dan protokolnya
+- **STATE**: open / filtered / closed
+- **SERVICE**: nama layanan berdasarkan port
+
+Contoh:
+- 22/tcp open ssh → Target membuka akses SSH → rentan jika password lemah
+- 80/tcp open http → Web server aktif → bisa lanjut ke fingerprinting
+
+———————————————
+
+🧠 Strategi Penggunaan Nmap oleh Pentester:
+1. Scan seluruh jaringan: `nmap -sn 192.168.1.0/24`
+2. Cek port terbuka: `nmap -sS [IP target]`
+3. Analisa layanan: `nmap -sV -O [IP target]`
+4. Simpan output sebagai referensi pentest berikutnya
+
+———————————————
+
+🛠️ Latihan Praktik Nmap
+
+1. Ping sweep (lihat host hidup):
+$ nmap -sn 192.168.0.0/24
+
+2. Full TCP scan ke salah satu IP:
+$ sudo nmap -sS -p- 192.168.0.1
+
+3. OS detection:
+$ sudo nmap -O 192.168.0.1
+
+4. Versi layanan:
+$ sudo nmap -sV 192.168.0.1
+
+Catatan:
+- Gunakan IP dari jaringan kamu (cek dengan `ip a`)
+- Jalankan sebagai root (pakai sudo) untuk hasil maksimal
+
+———————————————
+
+📂 Menyimpan Output ke File
+
+Contoh:
+$ nmap -sS 192.168.0.1 -oN hasil-scan.txt
+
+Jenis output:
+- `-oN` = Normal
+- `-oX` = XML
+- `-oG` = Grepable (untuk script)
+
+———————————————
+
+📝 Tugas Hari ke-6:
+
+1. Lakukan scanning ke IP lokal kamu (misal 192.168.0.1)
+   - Ping sweep seluruh subnet
+   - Full port scan ke 1 IP target
+   - OS detection
+   - Versi layanan
+
+2. Simpan hasil ke file:
+   - hasil-nmap.txt
+
+3. Tulis analisis sederhana:
+   - Ada berapa host aktif?
+   - Port apa saja yang terbuka?
+   - OS target kira-kira apa?
+   - Layanan apa yang terdeteksi?
+
+———————————————
+
+📦 Tips Etika:
+- Gunakan Nmap hanya di jaringan lokal / lab / target legal!
+- Jangan scan jaringan kantor/sekolah/internet publik tanpa izin → ilegal
+
+📚 Referensi Tambahan:
+- https://nmap.org/book/man-briefoptions.html
+- https://nmap.org/docs.html
+
+===== END OF DAY 6 =====
