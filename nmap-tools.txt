@@ -114,7 +114,11 @@ Jenis output:
      -> Nmap done: 1 IP address (1 host up) scanned in 1.25 seconds
 
    - Port apa saja yang terbuka?
+    -> PORT     STATE SERVICE VERSION
+        8080/tcp open  http    SimpleHTTPServer 0.6 (Python 3.11.2)
+
    - OS target kira-kira apa?
+    
    - Layanan apa yang terdeteksi?
 
 ———————————————
