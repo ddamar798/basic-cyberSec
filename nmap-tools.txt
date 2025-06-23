@@ -118,7 +118,11 @@ Jenis output:
         8080/tcp open  http    SimpleHTTPServer 0.6 (Python 3.11.2)
 
    - OS target kira-kira apa?
-    
+    ->  Device type: general purpose
+        Running: Linux 2.6.X
+        OS CPE: cpe:/o:linux:linux_kernel:2.6.32
+        OS details: Linux 2.6.32
+
    - Layanan apa yang terdeteksi?
 
 ———————————————
