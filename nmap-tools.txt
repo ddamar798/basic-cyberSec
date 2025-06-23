@@ -124,7 +124,7 @@ Jenis output:
         OS details: Linux 2.6.32
 
    - Layanan apa yang terdeteksi?
-
+     -> hnaya http
 ———————————————
 
 📦 Tips Etika:
