@@ -1,4 +1,3 @@
-===== HARI KE-6 =====
 === Nmap — Tool Wajib Pentester: Scanning dan Mapping Jaringan ===
 
 🎯 Tujuan:
@@ -17,14 +16,6 @@ Nmap (Network Mapper) adalah tool open-source untuk scanning jaringan:
 Nmap = **tool utama** untuk reconnaissance aktif sebelum pentest
 
 ———————————————
-
-📦 2. Instalasi Nmap
-Parrot OS biasanya sudah punya Nmap. Cek dengan:
-$ nmap -v
-
-Kalau belum ada:
-$ sudo apt update && sudo apt install nmap
-
 ———————————————
 
 📘 3. Jenis Scanning Dasar Nmap
@@ -110,7 +101,7 @@ Jenis output:
 
 ———————————————
 
-📝 Tugas Hari ke-6:
+📝 Tugas:
 
 1. Lakukan scanning ke IP lokal kamu (misal 192.168.0.1)
    - Ping sweep seluruh subnet
@@ -118,11 +109,9 @@ Jenis output:
    - OS detection
    - Versi layanan
 
-2. Simpan hasil ke file:
-   - hasil-nmap.txt
-
-3. Tulis analisis sederhana:
+2. Tulis analisis sederhana:
    - Ada berapa host aktif?
+     ->
    - Port apa saja yang terbuka?
    - OS target kira-kira apa?
    - Layanan apa yang terdeteksi?
