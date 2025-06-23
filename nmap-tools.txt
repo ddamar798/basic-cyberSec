@@ -103,7 +103,7 @@ Jenis output:
 
 📝 Tugas:
 
-1. Lakukan scanning ke IP lokal kamu (misal 192.168.0.1)
+1. Lakukan scanning ke IP lokal kamu (misal 192.168.0.1) -> saya melakukan scan IP Addres saya denggan peintah [ ip a ]
    - Ping sweep seluruh subnet
    - Full port scan ke 1 IP target
    - OS detection
@@ -112,7 +112,7 @@ Jenis output:
 2. Tulis analisis sederhana:
    - Ada berapa host aktif?
      -> Nmap done: 1 IP address (1 host up) scanned in 1.25 seconds
-     
+
    - Port apa saja yang terbuka?
    - OS target kira-kira apa?
    - Layanan apa yang terdeteksi?
