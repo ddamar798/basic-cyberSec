@@ -112,7 +112,9 @@ Contoh Output Berdasarkan Praktik Nyata Beserta Penjelasanya:
 | `UDP`               | Jenis protokol Layer 4 → UDP (biasanya HTTPS pakai TCP, tapi ini bisa QUIC) |
 | `length 228`        | Panjang data yang dibawa (228 byte)                                         |
 -----------------------------------------------------------------------------------------------------
-
+🧠 Catatan:
+Port 443 biasanya → HTTPS
+Tapi jika protokolnya UDP, kemungkinan besar → QUIC Protocol, yang sekarang banyak digunakan oleh Google Chrome & server Google.
 
 💡 Etika & Tips:
 - Jangan sniffing di jaringan umum!
