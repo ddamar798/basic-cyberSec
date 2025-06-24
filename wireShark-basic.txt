@@ -97,8 +97,11 @@ $ tcpdump -r traffic-hari7.pcap
 
 ———————————————
 
-Contoh Output Berdasarkan Praktik Nyata Beserta Penjelasanya:
+Contoh Analisa Output Berdasarkan Praktik Nyata Beserta Penjelasanya:
  
+jenis Output -> 06:56:06.804815 IP 142.251.10.94.443 > 10.0.2.15.47367: UDP, length 228
+                06:56:06.805074 IP 10.0.2.15.47367 > 142.251.10.94.443: UDP, length 35
+
  - OUTPUT ANALISA BARIS KE 1 :
  06:56:06.804815 IP 142.251.10.94.443 > 10.0.2.15.47367: UDP, length 228
 -----------------------------------------------------------------------------------------------------
