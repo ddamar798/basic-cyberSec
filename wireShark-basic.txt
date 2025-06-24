@@ -97,6 +97,23 @@ $ tcpdump -r traffic-hari7.pcap
 
 ———————————————
 
+Contoh Output Berdasarkan Praktik Nyata Beserta Penjelasanya:
+ 
+ - OUTPUT ANALISA BARIS KE 1 :
+ 06:56:06.804815 IP 142.251.10.94.443 > 10.0.2.15.47367: UDP, length 228
+-----------------------------------------------------------------------------------------------------
+| Bagian              | Arti                                                                        |
+| ------------------- | --------------------------------------------------------------------------- |
+| `06:56:06.804815`   | Timestamp (jam\:menit\:detik.milidetik) saat paket ditangkap                |
+| `IP`                | Jenis protokol pada Layer 3 (IP version 4)                                  |
+| `142.251.10.94.443` | IP publik Google (kemungkinan `google.com`) dan port 443 (HTTPS)            |
+| `>`                 | Arah komunikasi: dari kiri (source) ke kanan (destination)                  |
+| `10.0.2.15.47367`   | IP lokal milikmu (dalam VirtualBox NAT), port acak 47367                    |
+| `UDP`               | Jenis protokol Layer 4 → UDP (biasanya HTTPS pakai TCP, tapi ini bisa QUIC) |
+| `length 228`        | Panjang data yang dibawa (228 byte)                                         |
+-----------------------------------------------------------------------------------------------------
+
+
 💡 Etika & Tips:
 - Jangan sniffing di jaringan umum!
 - Wireshark hanya bisa lihat trafik yang melewati/ditujukan ke perangkatmu
