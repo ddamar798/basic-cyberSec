@@ -27,18 +27,6 @@ Digunakan untuk:
 
 ———————————————
 
-📦 3. Instalasi Wireshark
-
-Parrot OS biasanya sudah include.
-Kalau belum, install dengan:
-$ sudo apt install wireshark
-
-Lalu tambahkan user agar bisa sniff tanpa root:
-$ sudo usermod -aG wireshark $USER
-→ Setelah itu, logout dan login ulang
-
-———————————————
-
 📘 4. Menjalankan Wireshark
 
 1. Jalankan via terminal:
