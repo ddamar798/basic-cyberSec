@@ -1,0 +1,121 @@
+===== HARI KE-7 =====
+=== Teknik Sniffing & Analisis Traffic dengan Wireshark ===
+
+🎯 Tujuan:
+Memahami cara kerja sniffing, mengenali paket-paket jaringan, dan menggunakan Wireshark untuk menganalisis lalu lintas data.
+
+———————————————
+
+📘 1. Apa Itu Sniffing?
+
+Sniffing = teknik untuk menangkap data yang mengalir dalam jaringan
+- Bisa pasif (sekadar melihat)
+- Bisa aktif (manipulasi data)
+
+Digunakan untuk:
+- Melihat request HTTP, DNS, dll
+- Mengidentifikasi protokol yang berjalan
+- Deteksi password/login jika tidak terenkripsi (HTTP, FTP)
+
+———————————————
+
+📘 2. Tools Sniffing
+
+- **Wireshark** → GUI terbaik untuk sniffing & analisis
+- **tcpdump** → versi terminal, cocok untuk server
+- **ettercap** → untuk sniffing + MITM (nanti)
+
+———————————————
+
+📦 3. Instalasi Wireshark
+
+Parrot OS biasanya sudah include.
+Kalau belum, install dengan:
+$ sudo apt install wireshark
+
+Lalu tambahkan user agar bisa sniff tanpa root:
+$ sudo usermod -aG wireshark $USER
+→ Setelah itu, logout dan login ulang
+
+———————————————
+
+📘 4. Menjalankan Wireshark
+
+1. Jalankan via terminal:
+$ wireshark &
+
+2. Pilih interface jaringan:
+- Biasanya: `eth0` atau `wlan0`
+- Mulai capture: klik icon hiu biru 🦈
+
+3. Hentikan dengan tombol Stop (⏹️) setelah 10–30 detik
+
+———————————————
+
+🔍 5. Filter Wireshark Penting
+
+Gunakan filter di atas daftar paket (display filter):
+
+- **http** → Lihat paket HTTP
+- **tcp.port == 80** → Filter port 80
+- **ip.addr == 192.168.0.1** → Fokus ke 1 IP
+- **dns** → Hanya tampilkan request DNS
+- **tcp.flags.syn == 1** → Lihat permintaan koneksi TCP (handshake)
+
+———————————————
+
+🛠️ 6. Analisa Paket
+
+Klik salah satu paket, lalu buka panel detail di bawahnya:
+
+- **Frame** → Informasi dasar: ukuran, waktu, dst
+- **Ethernet II** → MAC address sumber & tujuan
+- **IP** → Alamat IP sumber & tujuan
+- **TCP/UDP** → Port, flags (SYN, ACK, dll)
+- **HTTP/DNS** → Info request URL atau nama domain
+
+Contoh hasil:
+→ HTTP paket ke `tokopedia.com`, metode GET, path `/home`
+→ DNS Query ke `accounts.google.com`
+
+———————————————
+
+📘 7. Simpan & Analisis File .pcap
+
+1. Setelah capture, klik `File → Save As → traffic-hari7.pcap`
+2. Bisa dibuka ulang nanti, dikirim ke mentor, atau dianalisis dengan `tcpdump`
+
+Buka di terminal:
+$ tcpdump -r traffic-hari7.pcap
+
+———————————————
+
+📝 Tugas Hari ke-7:
+
+1. Jalankan Wireshark selama 1–2 menit
+   - Lakukan browsing ke beberapa situs HTTP & HTTPS
+2. Gunakan filter:
+   - http
+   - dns
+   - ip.addr == [alamat IP kamu]
+3. Simpan capture ke file: `hari7-capture.pcap`
+4. Catat:
+   - Domain apa saja yang diakses?
+   - Apakah terlihat paket HTTP?
+   - Apa isi salah satu request DNS?
+   - Port apa yang digunakan?
+
+📂 Simpan juga hasil jawabanmu di file `hari7-catatan.txt`
+
+———————————————
+
+💡 Etika & Tips:
+- Jangan sniffing di jaringan umum!
+- Wireshark hanya bisa lihat trafik yang melewati/ditujukan ke perangkatmu
+- Jika pakai NAT, kamu mungkin tidak bisa lihat seluruh broadcast jaringan
+
+📚 Referensi Tambahan:
+- https://www.wireshark.org/docs/wsug_html_chunked/
+- https://wiki.wireshark.org/CaptureFilters
+
+===== END OF DAY 7 =====
