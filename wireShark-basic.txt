@@ -116,6 +116,16 @@ Contoh Output Berdasarkan Praktik Nyata Beserta Penjelasanya:
 - Port 443 biasanya → HTTPS
 - Tapi jika protokolnya UDP, kemungkinan besar → QUIC Protocol, yang sekarang banyak digunakan oleh Google Chrome & server Google.
 
+- OUTPUT ANALISA BARIS KE 2 :
+06:56:06.805074 IP 10.0.2.15.47367 > 142.251.10.94.443: UDP, length 35
+-----------------------------------------------------------------------
+- Ini adalah balasan dari sisi kamu ke server Google, dengan:
+- Port sumber tetap 47367 (port acak dari klien)
+- Port tujuan 443 (QUIC over UDP)
+- Panjang data 35 byte (mungkin ACK, request handshake, dll)
+
+
+
 💡 Etika & Tips:
 - Jangan sniffing di jaringan umum!
 - Wireshark hanya bisa lihat trafik yang melewati/ditujukan ke perangkatmu
