@@ -124,8 +124,6 @@ Contoh Output Berdasarkan Praktik Nyata Beserta Penjelasanya:
 - Port tujuan 443 (QUIC over UDP)
 - Panjang data 35 byte (mungkin ACK, request handshake, dll)
 
-
-
 💡 Etika & Tips:
 - Jangan sniffing di jaringan umum!
 - Wireshark hanya bisa lihat trafik yang melewati/ditujukan ke perangkatmu
